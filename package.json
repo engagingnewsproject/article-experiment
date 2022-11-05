@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.4.0",
-    "gulp": "^3.8.11",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.0",
     "gulp-concat-util": "^0.5.5",
