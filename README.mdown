@@ -2,9 +2,9 @@
 This is a base template for displaying single news articles for use in various ENP research experiments. You can see an example of the page at https://thenewsbeat.org/trust-indicators/articles/us-demographic-shift-will-have-huge-political-impact/
 
 ### Structure
-config.json is where most of the work will happen. A few constants get set there that are the basis for the study. What variation of the study you get is based on query parameters in the URL, like /?author_photo=personal&author_bio=basic. Then constants get set based on those parameters. Use the root / as the control for the study.
+`config.json` is where most of the work will happen. A few constants get set there that are the basis for the study. What variation of the study you get is based on query parameters in the URL, like `/?author_photo=personal&author_bio=basic`. Then constants get set based on those parameters. Use the root / as the control for the study.
 
-See config-example.json for details on how to use the config.json file.
+See `config-example.json` for details on how to use the `config.json` file.
 
 The templating structure is manual, but simple. To create a new article, copy and paste one of the existing articles in the <code>/articles/</code> directory then rename it to the name of your article, such as <code>/my-new-article/</code>.
 
