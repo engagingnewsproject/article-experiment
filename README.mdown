@@ -53,4 +53,4 @@ Experiments are found at http://thegazettestar.com/. On WP Engine the site is ca
 
 
 
-_All you need to change in the code above is the `username` and `password` values._
+_All you need to change in the code above is `your-name`, `FTP Username` and `password` values._
