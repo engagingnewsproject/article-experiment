@@ -26,33 +26,31 @@ Make sure to update the article-list.html file with links to all of your article
 Experiments are found at http://thegazettestar.com/. On WP Engine the site is called "NewsBeat" (https://study.mediaengagement.org/).
 
 ### Pull all articles to your local machine
-1) In mediaengagemt.org's WP Engine account create a SFTP user for the "NewsBeat" site.
-  - my.wpengine.com / NewsBeat / SFTP users
+1) In stroudresearch.net's GoDaddy hosting account cPanel create a new FTP user.
 	- Make a note of your username (ex. cmestudy-name) & password
-	- Also, make note of "SFTP Address" and "Port Number" above the users table.
-	- [More on File Transfer Protocol](https://wpengine.com/support/sftp/?_gl=1*xsahx9*_ga*MTUyNTgyMTM0MS4xNjc2NDIwODk4*_ga_9HX6WG40N2*MTY4MTI1MDk0MS4xNi4xLjE2ODEyNTEyMzMuMC4wLjA.)
+	- Also, make note of the Manual Settings in your new FTP Account under Configure FTP Client
 	
 2) Create an empty directory that you wish to first download the contents of the remote server. Open that directory in VS Code.
 
 3) Download the VS Code [SFTP extension](https://marketplace.visualstudio.com/items?itemName=Natizyskunk.sftp) for VS Code.
 
-4) `Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on Mac open command palette, run `SFTP: config` command.
-
-5) Sync your local directory with the remote folder. Open the command palette again and choose `SFTP: Download Project`. This will download the directory shown in the `remotePath` setting in `sftp.json` to your local open directory. Example:
-
+4) `Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on Mac open command palette, run `SFTP: config` command. Example `sftp.config` file
 ```json
 {
-    "name": "cmestudy",
-    "host": "cmestudy.sftp.wpengine.com",
-    "protocol": "sftp",
-    "port": 2222,
-    "username": "cmestudy-name",
-    "remotePath": "/thenewsbeat",
+    "name": "[your-name]",
+    "host": "ftp.stroudresearch.net",
+    "protocol": "ftp",
+    "port": 21,
+    "username": "[FTP Username]",
+    "password": "[password]",
+    "remotePath": "/public_html/NewsBeat",
     "uploadOnSave": false,
-    "password": "password",
     "useTempFile": false,
     "openSsh": false
 }
 ```
+5) Sync your local directory with the remote folder. Open the command palette again and choose `SFTP: Download Project`. This will download the directory shown in the `remotePath` setting in `sftp.json` to your local open directory.
+
+
 
 _All you need to change in the code above is the `username` and `password` values._

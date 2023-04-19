@@ -19,8 +19,9 @@ var concat = require("gulp-concat");
 gulp.task('serve', ['sass', 'js', 'compressImg', 'svgstore'], function() {
 
     browserSync({
-        proxy: "https://2019-reporter-biographies.test"
-    });
+			proxy:
+				"http://localhost:10084/thenewsbeat/article-experiment/article-list.html",
+		})
     // Watch SCSS file for change to pass on to sass compiler,
     gulp.watch('assets/sass/*.{scss,sass}', ['sass']);
     // Watch SCSS file for change to pass on to sass compiler,
