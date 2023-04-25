@@ -19,6 +19,19 @@ All clicks on buttons or links are tracked via Google Analytics and pass the but
 ### Local Set-up
 We're using Gulp to compile. Run <code>npm install</code> from your project directory to install the node modules from <code>package.json</code>. Run <code>gulp</code> on the command line to serve the project up via localhost with BrowserSync.
 
+#### Command line help:
+
+- Check your node version
+  - `nvm current` on the `/article-experiment` directory 
+
+- If your node version is not `8.11.1` run
+  - `nvm use 8.11.1`
+
+And lastly, make sure you have gulp installed on the `/article-experiment` directory. Run:
+`npm install --save-dev gulp`
+
+After all of that, you can run `npm i` once again to make sure all packages are installed.
+
 ### When Finished
 Make sure to update the article-list.html file with links to all of your articles
 
