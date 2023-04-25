@@ -30,15 +30,6 @@
         var studyType = '<?php echo IDENTIFIER;?>';
     </script>
 
-    <?php if(defined('AUTHOR_PHOTO_SIZE')): ?>
-    <style type="text/css">
-        .author__image {
-            height: <?php echo AUTHOR_PHOTO_SIZE;?>px;
-            width: <?php echo AUTHOR_PHOTO_SIZE;?>px;
-        }
-    </style>
-    <?php endif;?>
-
 </head>
 
 <body>

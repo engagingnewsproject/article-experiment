@@ -15,15 +15,16 @@ $config = json_decode($configFile, true);
   * 1. What is the name of the directory you'll use when you upload this to thenewsbeat.org? 
   *    If you'll be at thenewsbeat.org/2019-reporter-biographies/, enter '2019-reporter-biographies'
   */
-define('NEWSBEAT_DIRECTORY_NAME', $config['newsbeatDirectoryName']);
+define('NEWSBEAT_DIRECTORY_NAME', $config['2023-article-experiment']);
 /**
  * 2. What is the prefix for your study? This will be used in the comment logging and creating people's unique user IDs.
  *    This will get stored to their localStorage and used from there after the first time. So, if you update it, you'll need 
  *    to clear your localStorage to see the effect.
  */
-define('STUDY_PREFIX',  $config['studyPrefix']);
+define('STUDY_PREFIX',  $config['article-explanations']);
 
 define('IS_DEV', "$_SERVER[HTTP_HOST]" !== 'thenewsbeat.org');
+
 define('DIST_URL', IS_DEV ? "https://$_SERVER[HTTP_HOST]/dist" : "https://$_SERVER[HTTP_HOST]/".NEWSBEAT_DIRECTORY_NAME."/dist");
 
 function getConfigVariation($variationKey) {

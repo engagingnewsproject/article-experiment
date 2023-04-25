@@ -1,14 +1,15 @@
 {
     "README": "There are notes in config.php where each of these keys is used. View config.php's comments to see what each value is used for.",
-    "newsbeatDirectoryName": "2019-reporter-biographies",
-    "studyPrefix": "bio_",
+    "newsbeatDirectoryName": "2023-article-experiment",
+    "studyPrefix": "explain_",
     "siteName": "The Gazette Star",
     "templatePath": "/templates/article-template.php",
     "variations": [
+
         {
-            "id": "bio",
-            "constant": "AUTHOR_BIO",
-            "GET": "author_bio",
+            "id": "explanation",
+            "constant": "EXPLAIN_BOX",
+            "GET": "explain_box",
             "required": true,
             "vars": [
                 {
@@ -17,35 +18,22 @@
                     "value": false
                 },
                 {
-                    "id": "personal",
-                    "key": "personal",
-                    "value": "<p>Jim Phelps is a science reporter for The Gazette Star. His coverage of energy and the environment has appeared in the Dallas Morning News, The Atlantic and Newsweek. A Colorado native and life-long Broncos fan, he began his career at the Denver Post, where he was part of a team that won a Pulitzer Prize for their story about the pollution of popular hot springs in Aspen. He graduated with a journalism degree from Vanderbilt University where he served as the editor-in-chief of the student newspaper. His simple pleasures in life include hiking with his wife and two sons and the smell of barbecue on the lakefront after surviving a cold winter.</p>"
+                    "id": "solidarity",
+                    "key": "solidarity",
+                    "value": "<p>Our coverage of protests since Roe v. Wade was overturned prioritizes sources participating in the larger movement. We take this approach to represent the direct experiences of those affected by the decision.</p>"
                 },
                 {
-                    "id": "basic",
-                    "key": "basic",
-                    "value": "<p>Jim Phelps is a science reporter for The Gazette Star. His coverage of energy and the environment has appeared in the Dallas Morning News, The Atlantic and Newsweek. He began his career at the Denver Post, where he was part of a team that won a Pulitzer Prize for their story about the pollution of popular hot springs in Aspen. He graduated with a journalism degree from Vanderbilt University and served as editor-in-chief of the student newspaper.</p>"
-                }
-            ]
-        },
-        {
-            "id": "photo_size",
-            "constant": "AUTHOR_PHOTO_SIZE",
-            "GET": "photo_size",
-            "required": false,
-            "vars": [
-                {
-                    "id": "small",
-                    "key": "small",
-                    "value": 50
+                    "id": "monitorial",
+                    "key": "monitorial",
+                    "value": "<p>Our coverage of protests since Roe vs. Wade was overturned prioritizes sources with official positions who are in charge of enforcing city ordinances. We take this approach to represent officials’ responses to protests.</p>"
                 },
                 {
-                    "id": "px",
-                    "key": "/[0-9]+/",
-                    "regex": true
+                  "id": "inflation",
+                  "key": "inflation",
+                  "value": "<p>Our coverage of economic inflation focuses on the stock market, interest rates, and the effect of the economy on Americans.</p>"
                 }
             ]
-        }
+        }  
     ],
     "article": {
         "author": {

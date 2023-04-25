@@ -109,7 +109,7 @@ article {
 .icon--trust-project {
     font-size: 2.2rem;
     float: left;
-    margin-right: $spacing__base / 4;
+    margin-right: calc($spacing__base / 4);
     top: 0;
 }
 
@@ -117,7 +117,7 @@ article {
     margin-top: $spacing__base;
 
     @include media($tablet) {
-        margin-bottom: $spacing__base * 2;
+        margin-bottom: calc($spacing__base * 2);
     }
 
     img {
@@ -131,12 +131,12 @@ article {
 
 .byline {
     font-size: .75rem;
-    margin-bottom: $spacing__base * 0.6;
+    margin-bottom: calc($spacing__base * 0.6);
     color: $font--light;
 }
 
 .behind-the-story {
-    margin: $spacing__base * 2 0;
+    margin: calc($spacing__base * 2) 0;
 
     .behind-the-story__title {
         font-size: 1.4rem;
@@ -156,17 +156,17 @@ article {
 }
 
 .trust-project--callout {
-    margin-top: $spacing__base*2;
+    margin-top: calc($spacing__base*2);
     margin-right: 0;
     margin-left: 0;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    padding: $spacing__base/2 $spacing__base/2;
+    padding: calc($spacing__base/2) calc($spacing__base/2);
 }
 
 
 .trust-project-callout__logo {
-    margin-bottom: $spacing__base * 0.8;
+    margin-bottom: calc($spacing__base * 0.8);
 }
 
 .trust-project-callout__content p {

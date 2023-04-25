@@ -1,60 +1,42 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
-var reload  = browserSync.reload;
-var minifyCss = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var rename = require("gulp-rename");
-const imagemin = require('gulp-imagemin');
-var svgstore = require('gulp-svgstore');
-var svgmin = require('gulp-svgmin');
-var path = require('path');
-var concat = require("gulp-concat");
+import gulp from 'gulp'
+import browserSync from 'browser-sync'
 
-
-
+import sourcemaps from 'gulp-sourcemaps'
+import autoprefixer from 'gulp-autoprefixer'
+// import reload from browserSync.reload;
+import minifyCss from 'gulp-minify-css'
+import uglify from 'gulp-uglify'
+import rename from "gulp-rename"
+import imagemin from 'gulp-imagemin'
+import svgstore from 'gulp-svgstore'
+import svgmin from 'gulp-svgmin'
+import path from 'path'
+import concat from "gulp-concat"
+import dartSass from 'sass';
+import connectPHP from 'gulp-connect-php'
+import gulpSass from 'gulp-sass';
+const sass = gulpSass( dartSass );
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass', 'js', 'compressImg', 'svgstore'], function() {
 
-    browserSync({
-        proxy: "https://2019-reporter-biographies.test"
-    });
-    // Watch SCSS file for change to pass on to sass compiler,
-    gulp.watch('assets/sass/*.{scss,sass}', ['sass']);
-    // Watch SCSS file for change to pass on to sass compiler,
-    gulp.watch('assets/js/*.js', ['js']);
-    // run img compression when images added to directory
-    gulp.watch('assets/img/*.*', ['compressImg']);
-    // run SVG when svg files added
-    gulp.watch('assets/svg/*.svg', ['svgstore']);
-    // Watch our CSS file and reload when it's done compiling
-    gulp.watch("dist/css/*.css").on('change', reload);
-    // Watch php file
-    gulp.watch("*/*.php").on('change', reload);
-    // watch javascript files
-    gulp.watch("dist/js/*.js").on('change', reload);
-});
+gulp.task('svgmethod', async function () {
+  return gulp
+  .src('assets/svg/*.svg')
+  .pipe(svgmin(function (file) {
+      var prefix = path.basename(file.relative, path.extname(file.relative));
+      return {
+          plugins: [{
+              cleanupIDs: {
+                  prefix: prefix + '-',
+                  minify: true
+              }
+          }]
+      };
+  }))
+  .pipe(svgstore({ inlineSvg: true }))
+  .pipe(gulp.dest('dist/svg/'));
+})
 
-gulp.task('svgstore', function () {
-    return gulp
-        .src('assets/svg/*.svg')
-        .pipe(svgmin(function (file) {
-            var prefix = path.basename(file.relative, path.extname(file.relative));
-            return {
-                plugins: [{
-                    cleanupIDs: {
-                        prefix: prefix + '-',
-                        minify: true
-                    }
-                }]
-            };
-        }))
-        .pipe(svgstore({ inlineSvg: true }))
-        .pipe(gulp.dest('dist/svg/'));
-});
-
+gulp.task('svgstore', gulp.series('svgmethod'));
 /* gulp.task('sass', function () {
   // gulp.src locates the source files for the process.
   // This globbing function tells gulp to use all files
@@ -75,21 +57,22 @@ gulp.task('svgstore', function () {
 })*/
 
 
-gulp.task('sass', function () {
-    processSASS('styles');
+gulp.task('sass', async function () {
+  processSASS('styles');
 });
 
-gulp.task('js', function() {
-    var jsFiles = 'assets/js/*.js',
-    jsDest = 'dist/js';
+function jsMethod() {
+  var jsFiles = 'assets/js/*.js',
+  jsDest = 'dist/js';
 
-    return gulp.src(jsFiles)
-        .pipe(concat('scripts.js'))
-        .pipe(gulp.dest(jsDest))
-        .pipe(rename('scripts.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(jsDest));
-});
+  return gulp.src(jsFiles)
+      .pipe(concat('scripts.js'))
+      .pipe(gulp.dest(jsDest))
+      .pipe(rename('scripts.min.js'))
+      .pipe(uglify())
+      .pipe(gulp.dest(jsDest));
+}
+gulp.task('js', gulp.series(jsMethod));
 
 function compressJS(filename) {
     rootPath = "assets/js/";
@@ -104,14 +87,16 @@ function compressJS(filename) {
         .pipe(gulp.dest(dist));
 }
 
-gulp.task('compressImg', function() {
-    return gulp.src('assets/img/*')
-            .pipe(imagemin())
-            .pipe(gulp.dest('dist/img'));
+
+gulp.task('compressImgMethod', function () {
+  return gulp.src('assets/img/*')
+          .pipe(imagemin())
+          .pipe(gulp.dest('dist/img'));
 });
+gulp.task('compressImg', gulp.series('compressImgMethod'));
 
 
-function processSASS(filename) {
+async function processSASS(filename) {
     return gulp.src('assets/sass/'+filename+'.{scss,sass}')
       // Converts Sass into CSS with Gulp Sass
       .pipe(sass({
@@ -131,5 +116,61 @@ function processSASS(filename) {
       .pipe(gulp.dest('dist/css/'));
 }
 
+
+
+gulp.task('watch', async function () {
+  
+  browserSync.init({
+    // proxy: "localhost",
+    proxy: 'dev/2023-article-experiment',
+    //host: 'dev/2023-article-experiment',
+    open: 'external'
+  });
+
+  // Watch SCSS file for change to pass on to sass compiler,
+  gulp.watch('assets/sass/*.{scss,sass}', gulp.series('sass'));
+  // Watch SCSS file for change to pass on to sass compiler,
+  gulp.watch('assets/js/*.js', gulp.series('js'));
+  // run img compression when images added to directory
+  gulp.watch('assets/img/*.*', gulp.series('compressImg'));
+  // run SVG when svg files added
+  gulp.watch('assets/svg/*.svg', gulp.series('svgstore'));
+  // Watch our CSS file and reload when it's done compiling
+  gulp.watch("dist/css/*.css").on("change", browserSync.reload );
+  // Watch php file
+  gulp.watch("*/*.php").on("change", browserSync.reload );
+  // watch javascript files
+  gulp.watch("dist/js/*.js").on("change", browserSync.reload );
+});
+
+
+gulp.task('serve', gulp.series('sass', 'js', 'compressImg', 'svgstore', 'watch'), function() {
+  browserSync.init({
+    // proxy: "localhost",
+    proxy: 'dev/2023-article-experiment',
+    index: 'article_list.html',
+    //host: 'dev/2023-article-experiment',
+    open: 'external'
+  });
+
+  // Watch SCSS file for change to pass on to sass compiler,
+  gulp.watch('assets/sass/*.{scss,sass}', gulp.series('sass'));
+  // Watch SCSS file for change to pass on to sass compiler,
+  gulp.watch('assets/js/*.js', gulp.series('js'));
+  // run img compression when images added to directory
+  gulp.watch('assets/img/*.*', gulp.series('compressImg'));
+  // run SVG when svg files added
+  gulp.watch('assets/svg/*.svg', gulp.series('svgstore'));
+  // Watch our CSS file and reload when it's done compiling
+  gulp.watch("dist/css/*.css").on("change", browserSync.reload );
+  // Watch php file
+  gulp.watch("*/*.php").on("change", browserSync.reload );
+  // watch javascript files
+  gulp.watch("dist/js/*.js").on("change", browserSync.reload );
+});
+
+
 // Creating a default task
-gulp.task('default', ['serve']);
+gulp.task('default', gulp.series('serve'));
+
+

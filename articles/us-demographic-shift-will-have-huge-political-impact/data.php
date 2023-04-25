@@ -11,7 +11,7 @@ $featuredImage = array(
 $article = array(
     'author' => getAuthor(),
     'pubdate' => PUBDATE,
-    'title' => 'US Demographic Shift Will Have Huge Political Impact',
+    'title' => 'Women\'s March calls for reproductive rights',
     'featuredImage' => $featuredImage,
     'content' => '<p>SAN FRANCISCO &mdash; In less than 30 years, whites will no longer be the racial majority in the United States. Hispanics, African Americans and Asians – the country&rsquo;s three largest minority groups – will outnumber whites. This shift will have important implications for the nation&rsquo;s politics. Among these wide-ranging implications, perhaps none will be as significant as the evolving influence of political parties on the hearts and minds of American voters.</p>
     <p>At the turn of the 20th century, political parties in the United States were strong institutions that mobilized immigrant groups around core issues.  The political machines of both major parties – the Democrats and the Republicans – made sure that voters turned out on Election Day.</p>
@@ -29,3 +29,6 @@ $article = array(
     <p>That, analysts say, is a mistake that politicians of both parties cannot afford to repeat with the nation&rsquo;s burgeoning majority minority.</p>',
     'comments' => array(),
 );
+
+// Include file for explanation box if article stance is equal to explanation
+
