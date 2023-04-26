@@ -120,12 +120,12 @@ async function processSASS(filename) {
 
 gulp.task('watch', async function () {
   
-  browserSync.init({
-    // proxy: "localhost",
-    proxy: 'dev/2023-article-experiment',
-    //host: 'dev/2023-article-experiment',
-    open: 'external'
-  });
+	browserSync.init({
+		proxy: "article-experiment.test",
+		// For this to open for browsersync live reload, you need to install laravel+valet (https://laravel.com/docs/10.x/installation)
+		// and run `valet link` on directory and then `gulp`.
+		open: "external",
+	})
 
   // Watch SCSS file for change to pass on to sass compiler,
   gulp.watch('assets/sass/*.{scss,sass}', gulp.series('sass'));
@@ -145,13 +145,12 @@ gulp.task('watch', async function () {
 
 
 gulp.task('serve', gulp.series('sass', 'js', 'compressImg', 'svgstore', 'watch'), function() {
-  browserSync.init({
-    // proxy: "localhost",
-    proxy: 'dev/2023-article-experiment',
-    index: 'article_list.html',
-    //host: 'dev/2023-article-experiment',
-    open: 'external'
-  });
+	browserSync.init({
+		proxy: "article-experiment.test",
+		// For this to open for browsersync live reload, you need to install laravel+valet (https://laravel.com/docs/10.x/installation)
+		// and run `valet link` on directory and then `gulp`.
+		open: "external",
+	})
 
   // Watch SCSS file for change to pass on to sass compiler,
   gulp.watch('assets/sass/*.{scss,sass}', gulp.series('sass'));
