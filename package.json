@@ -1,31 +1,35 @@
 {
-  "name": "trust-project-experiment",
-  "version": "0.0.1",
-  "description": "Article experiments for the Trust Project.",
+  "name": "article-experiment",
+  "version": "1.0.0",
+  "description": "This is a base template for displaying single news articles for use in various ENP research experiments. You can see an example of the page at https://thenewsbeat.org/trust-indicators/articles/us-demographic-shift-will-have-huge-political-impact/",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jeremy Jones <jones.jeremydavid@gmail.com> (https://jeremyjon.es/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engagingnewsproject/article-experiment.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/engagingnewsproject/article-experiment/issues"
+  },
+  "homepage": "https://github.com/engagingnewsproject/article-experiment#readme",
   "devDependencies": {
     "browser-sync": "^2.29.1",
-    "gulp": "^4.0.2",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
-    "gulp-concat-util": "^0.5.5",
     "gulp-connect-php": "^1.0.3",
-    "gulp-imagemin": "^8.0.0",
-    "gulp-minify-css": "^1.2.3",
+    "gulp-imagemin": "^7.1.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svgmin": "^4.1.0",
     "gulp-svgstore": "^9.0.0",
-    "gulp-uglify": "^3.0.2"
-  },
-  "type": "module",
-  "dependencies": {
-    "sass": "^1.62.0"
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.62.1"
   }
 }
