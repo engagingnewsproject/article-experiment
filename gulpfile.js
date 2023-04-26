@@ -12,6 +12,8 @@ const imagemin = require("gulp-imagemin")
 const svgstore = require("gulp-svgstore")
 const svgmin = require("gulp-svgmin")
 const path = require("path")
+const sitename = 'article-experiment'; // set your siteName here
+// const username = 'lukey'; // set your macOS userName here
 
 // PATHS
 const paths = {
@@ -36,10 +38,8 @@ const paths = {
 // BROWSER SYNC WITH PHP INSIDE SERVER
 function sync() {
 	browserSync.init({
-		proxy: "localhost:8000/",
-		watch: true,
-		keepalive: true,
-		startPath: "/article-list.html",
+		proxy: sitename + ".test",
+		open: "external",
 	})
 }
 
@@ -105,7 +105,7 @@ function watchJs() {
 }
 
 function watchPhp() {
-	watch(["./*.html", "../**/*.php"]).on("change", browserSync.reload)
+	watch(["*.html", "../**/*.php"]).on("change", browserSync.reload)
 }
 
 // DEFAULT TASK

@@ -56,3 +56,9 @@ Experiments are found at http://thegazettestar.com/. On WP Engine the site is ca
 ```
 
 _All you need to change in the code above is the `username` and `password` values._
+
+### Browsersync + Gulp + Laravel Valet
+
+On project directory run `valet link`
+
+In new terminal window run `gulp`
