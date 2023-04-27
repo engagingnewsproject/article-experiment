@@ -3,6 +3,6 @@
 	<?php 
 	define('ROOT_DIRECTORY', dirname(__FILE__));
 	?>
-	<a href="/article-list.php">Article List</a>
+	<a href="/article-list.html">Article List</a>
 	</body>
 </html>

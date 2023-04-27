@@ -39,7 +39,7 @@ const paths = {
 function sync() {
 	browserSync.init({
 		proxy: sitename + ".test",
-		open: "external",
+		open: "local",
 	})
 }
 
@@ -105,7 +105,8 @@ function watchJs() {
 }
 
 function watchPhp() {
-	watch(["*.html", "../**/*.php"]).on("change", browserSync.reload)
+	watch(["*.html", "./**/*.php"])
+		.on("change", browserSync.reload)
 }
 
 // DEFAULT TASK
