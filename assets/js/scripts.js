@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
     // track all link clicks
     $(document).on('click', 'a', function(e) {
          e.preventDefault();
@@ -83,5 +82,4 @@ $(document).ready(function() {
       $(".new-comment").append("<div class='alert alert-error'>* Please enter your name and a comment.</div>");
       log('Comment', 'Add Comment', 'Add Comment Error');
     }
-
 });

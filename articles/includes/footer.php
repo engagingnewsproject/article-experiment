@@ -1,7 +1,7 @@
 
 <footer class="colophon container container--wide">
     <div class="row row--wide">
-        <p class="copyright center">This material may not be published, broadcast, rewritten, or redistributed.<br/>&copy; <?php echo Date('Y');?> <?php echo SITE_NAME;?>, LLC. All Rights Reserved.</p>
+        <p class="copyright center">This material may not be published, broadcast, rewritten, or redistributed.<br/>&copy; <? echo Date('Y');?> The Gazette Star, LLC. All Rights Reserved.</p>
     </div>
 </footer>
 
@@ -13,6 +13,6 @@
 // endif;?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="<?php echo getDistURL();?>/js/scripts.js"></script>
+<script src="../../dist/js/scripts.js"></script>
 </body>
 </html>

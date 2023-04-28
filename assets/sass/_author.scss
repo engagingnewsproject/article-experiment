@@ -1,7 +1,7 @@
 
 .author {
     display: block;
-    margin-bottom: $spacing__base / 2;
+    margin-bottom: calc($spacing__base / 2);
     @extend %clearfix;
 }
 
@@ -9,8 +9,8 @@
     border-radius: 50%;
     width: 75px;
     height: 75px;
-    margin-right: $spacing__base * 0.4;
-    margin-bottom: $spacing__base * 0.2;
+    margin-right: calc($spacing__base * 0.4);
+    margin-bottom: calc($spacing__base * 0.2);
     float: left;
 }
 
@@ -43,7 +43,7 @@
 
 .author__content {
 
-    margin-top: $spacing__base * 0.6;
+    margin-top: calc($spacing__base * 0.6);
 
     p, ul {
         font-size: 0.85rem;
@@ -71,7 +71,7 @@
     }
 
     li {
-        margin-bottom: $spacing__base/2;
+        margin-bottom: calc($spacing__base/2);
 
         @include media($tablet) {
             width: 47%;
@@ -86,5 +86,5 @@
 }
 
 .author__bio {
-    margin-bottom: $spacing__base / 2;
+    margin-bottom: calc($spacing__base / 2);
 }

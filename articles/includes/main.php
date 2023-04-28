@@ -1,8 +1,10 @@
 <?php
     $author = $article['author'];
     $comments = $article['comments'];
+    $anonymous = $article['anonymous'];
 ?>
 <main id="content" class="container" role="main">
+    
     <article class="article">
         <header class="article__header">
             <h2 class="article__title"><?php echo $article['title'];?></h2>
@@ -20,17 +22,16 @@
             </div>
         </header>
 
-        <figure class="featured-image">
-            <img class="article-img article-img--featured" src="<?php echo $article['featuredImage']['src'];?>" />
-            <figcaption><?php echo $article['featuredImage']['caption'];?></figcaption>
-        </figure>
-
         <?php 
-        
         echo $article['content'];
+        
+        if( EXPLAIN_BOX ): // EXPLAIN_BOX constant is a variation set in `config.json`
+            include('behind-the-story.php');
+        endif;
 
-        include('comments.php');
-
+        if ($article['comments_display']) {
+            include('comments.php');
+        }
         ?>
 
     </article>

@@ -16,4 +16,4 @@ ga('send', 'pageview');
 
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
-<script src="<?php echo getDistURL();?>/js/autotrack.js"></script>
+<script src="../../dist/js/autotrack.js"></script>
