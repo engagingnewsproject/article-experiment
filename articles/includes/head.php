@@ -8,11 +8,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $title;?> | The Gazette Star</title>
+    <title><?php echo $article['title'];?> | The Gazette Star</title>
 
     <?php $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
     <meta property="og:site_name" content="The Gazette Star"/>
-    <meta property="og:title" content="<? echo $title;?>"/>
+    <meta property="og:title" content="<? echo $article['title'];?>"/>
     <meta property="og:image" content="<? echo dirname(dirname($current_url)) .'/articles/'. $featured_img;?>"/>
     <meta property="og:url" content="<? echo $current_url;?>"/>
     <meta property="og:description" content="<? echo strip_tags(substr($article,0,240))?>&hellip;" />

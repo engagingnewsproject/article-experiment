@@ -2,7 +2,7 @@
     "README": "There are notes in config.php where each of these keys is used. View config.php's comments to see what each value is used for.",
     "newsbeatDirectoryName": "2023-article-experiment",
     "studyPrefix": "explain_",
-    "siteName": "The Gazette Star",
+    "siteName": "The Gazette Stars",
     "templatePath": "/articles/article-template.php",
     "variations": [
         {
@@ -24,7 +24,7 @@
                 {
                     "id": "monitorial",
                     "key": "monitorial",
-                    "value": "<p>Our coverage of protests since Roe vs. Wade was overturned prioritizes sources with official positions who are in charge of enforcing city ordinances. We take this approach to represent officials’ responses to protests.</p>"
+                    "value": "<p>Our coverage of protests since Roe vs. Wade was overturned prioritizes sources with official positions who are in charge of enforcing city ordinances. We take this approach to represent officials' responses to protests.</p>"
                 },
                 {
                   "id": "inflation",
@@ -43,6 +43,6 @@
                 "alt": ""
             }
         },
-        "pubdate": "Aug. 6, 2019"
+        "pubdate": "Aug. 6, 2022"
     }
 }

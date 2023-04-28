@@ -26,6 +26,7 @@ Make sure to update the article-list.html file with links to all of your article
 Experiments are found at http://thegazettestar.com/. On WP Engine the site is called "NewsBeat" (https://study.mediaengagement.org/).
 
 ### Pull all articles to your local machine
+TODO: fix everything below (move to WP Engine & NOT GoDaddy)
 1) In mediaengagemt.org's WP Engine account create a SFTP user for the "NewsBeat" site.
   - my.wpengine.com / NewsBeat / SFTP users
 	- Make a note of your username (ex. cmestudy-name) & password

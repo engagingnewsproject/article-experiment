@@ -1,51 +1,38 @@
+<?php
+    $author = $article['author'];
+    $comments = $article['comments'];
+    $anonymous = $article['anonymous'];
+?>
 <main id="content" class="container" role="main">
-    <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+    
     <article class="article">
         <header class="article__header">
-
-            <h2 class="article__title"><?php echo $title;?></h2>
-            <p class="byline">Posted on <time pubdate="pubdate"><?php echo $pubdate;?></time></p>
+            <h2 class="article__title"><?php echo $article['title'];?></h2>
+            <p class="byline">Posted on <time pubdate="pubdate"><?php echo $article['pubdate'];?></time></p>
             <div class="article__extra-header-info">
                 <div class="author">
-                    <p class="author__name">By <?php echo $author;?></p>
-                    <p class="author__job">The Gazette Star Staff Reporter</p>
+                    <?php if(!empty($author['image']['src'])) { ?>
+                    <img class="author__image" src="<?php echo $author['image']['src'];?>" alt="<?php echo $author['image']['alt'];?>" />
+                    <?php } ?>
+                    <p class="author__name">By <?php echo $author['name'];?></p>
+                    <p class="author__job"><?php echo SITE_NAME;?> Staff Reporter</p>
+                    <?php if(!empty($author['bio'])) {include('author-bio.php');}?>
                 </div>
 
             </div>
         </header>
-        <?php if ($featured_img) { ?>
-        <h6 style="font-size: .6em; text-align: right"><u><small><strong>Advertiser Content</strong></small></u></h6>
-            <a href = "#"><img src="<?php echo $featured_img;?>" alt="Sponsered advertisement"></a>
-        <?php } ?>
-        <hr />
 
-        <?php echo $article;?>
+        <?php 
+        echo $article['content'];
+        
+        if( EXPLAIN_BOX ): // EXPLAIN_BOX constant is a variation set in `config.json`
+            include('behind-the-story.php');
+        endif;
 
-      <!-- Commenting out Levi's beautiful buttons for now
-        <a href="javascript:void(0);">
-            <button class="like-button custom-button">
-                <i class="fas fa-thumbs-up"></i>
-
-                Like
-            </button>
-        </a>
-
-        <a href="javascript:void(0);">
-            <button class="share-button custom-button">
-                <i class="fas fa-share"></i>
-
-                Share
-            </button>
-        </a
-
-      -->
-
-        <?php
-
-        include('comments.php');
+        if ($article['comments_display']) {
+            include('comments.php');
+        }
         ?>
 
     </article>
-
-
 </main>

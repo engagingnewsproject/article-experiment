@@ -32,6 +32,21 @@ function svg($name, $options = array('title'=>false,'class'=>false)) {
 '<svg class="icon icon--'.$name. ($options['class'] != false ? ' '. $options['class']  : '').'">'.($options['title'] != false ? '<title>'.$options['title'].'</title>' : '').'<use xlink:href="#'.$name.'" /></svg>';
 }
 
+function getDistURL() {
+	return DIST_URL;
+}
+
+function getAuthor() {
+	return array(
+		'image' => array(
+			'src' => AUTHOR_PHOTO,
+			'alt' => AUTHOR_PHOTO_ALT,
+		),
+		'name'  => AUTHOR_NAME,
+		// 'bio' => AUTHOR_BIO
+	);
+}
+
 function get_current_url() {
 	return "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 }

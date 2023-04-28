@@ -1,4 +1,5 @@
 
+<body>
 <?php 
 /**
  * IMPORTANT: Use this file to set the custom info in the study.
@@ -23,7 +24,7 @@ define('NEWSBEAT_DIRECTORY_NAME', $config['newsbeatDirectoryName']);
  */
 define('STUDY_PREFIX',  $config['studyPrefix']);
 
-define('IS_DEV', "$_SERVER[HTTP_HOST]" !== 'thegazettestar.com');
+define('IS_DEV', "$_SERVER[HTTP_HOST]" !== 'www.stroudresearch.net');
 
 define('DIST_URL', IS_DEV ? "https://$_SERVER[HTTP_HOST]/dist" : "https://$_SERVER[HTTP_HOST]/".NEWSBEAT_DIRECTORY_NAME."/dist");
 
@@ -210,3 +211,6 @@ foreach($constants as $key => $val) {
 
 // include the functions file
 include ('inc/functions.php');
+
+?>
+</body>
