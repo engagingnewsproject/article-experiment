@@ -1,2 +1,1 @@
-<?php 
-define('ROOT_DIRECTORY', dirname(__FILE__));
+<?define('ROOT_DIRECTORY', dirname(__FILE__));?>

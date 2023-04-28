@@ -1,4 +1,4 @@
 <?php
-$title = 'The News Beat Article Types';
+$title = 'The Gazette Star Article Types';
 $identifier = 'trust';
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-function getIPAddress() {
+function get_the_ip() {
 	//Just get the headers if we can or else use the SERVER global
 	if ( function_exists( 'apache_request_headers' ) ) {
 		$headers = apache_request_headers();
@@ -32,28 +32,13 @@ function svg($name, $options = array('title'=>false,'class'=>false)) {
 '<svg class="icon icon--'.$name. ($options['class'] != false ? ' '. $options['class']  : '').'">'.($options['title'] != false ? '<title>'.$options['title'].'</title>' : '').'<use xlink:href="#'.$name.'" /></svg>';
 }
 
-function getDistURL() {
-	return DIST_URL;
-}
-
-function getAuthor() {
-	return array(
-		'image' => array(
-			'src' => AUTHOR_PHOTO,
-			'alt' => AUTHOR_PHOTO_ALT,
-		),
-		'name'  => AUTHOR_NAME,
-		'bio' => AUTHOR_BIO
-	);
-}
-
-function getCurrentUrl() {
+function get_current_url() {
 	return "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 }
 
 function socialShare($id) {
-	$current_url = getCurrentUrl();
-	$user_ip = getIPAddress();
+	$current_url = get_current_url();
+	$user_ip = get_the_ip();
 	return '<ul class="social-share social-share--'.$id.'">
 				<li class="social-share__item social-share__item--facebook">
 					<a class="social-share__link social-share__link--facebook social-share__link--facebook-'.$id.'" data-position="'.ucwords($id).'" data-label="'.$user_ip.'"

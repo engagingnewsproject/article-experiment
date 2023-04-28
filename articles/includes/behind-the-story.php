@@ -23,6 +23,6 @@
     <h3>Version History</h3>
     <?php echo $version_history;?>
 
-    <p>This story was researched, written, and published in accordance with The News Beat’s best practices.</p>
+    <p>This story was researched, written, and published in accordance with The Gazette Star’s best practices.</p>
 
 </section>

@@ -3,9 +3,8 @@
     "newsbeatDirectoryName": "2023-article-experiment",
     "studyPrefix": "explain_",
     "siteName": "The Gazette Star",
-    "templatePath": "/templates/article-template.php",
+    "templatePath": "/articles/article-template.php",
     "variations": [
-
         {
             "id": "explanation",
             "constant": "EXPLAIN_BOX",

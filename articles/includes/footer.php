@@ -1,7 +1,7 @@
 
 <footer class="colophon container container--wide">
     <div class="row row--wide">
-        <p class="copyright center">This material may not be published, broadcast, rewritten, or redistributed.<br/>&copy; <? echo Date('Y');?> The News Beat, LLC. All Rights Reserved.</p>
+        <p class="copyright center">This material may not be published, broadcast, rewritten, or redistributed.<br/>&copy; <? echo Date('Y');?> The Gazette Star, LLC. All Rights Reserved.</p>
     </div>
 </footer>
 

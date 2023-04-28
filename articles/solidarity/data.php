@@ -4,13 +4,12 @@
 // Everything ends up in one $article array to make it easier to dump everything and see what we're working with. Makes it easier to transition
 // to a class or database in the future as well since things are more organized.
 
-
-$article = array(
-    'author' => getAuthor(),
-    'pubdate' => PUBDATE,
-    'title' => 'Women\'s March calls for reproductive rights',
-    'featuredImage' => '',
-    'content' => '<p>Samantha Ripple was tattooed with a single word—“JUSTICE”—as she marched with about 500 people through the streets of Seattle Saturday in the latest Women’s March to demand reproductive rights and access to safe, legal abortions.</p>
+$title = 'Women\'s March calls for reproductive rights';
+$author = 'Andrew Smith';
+$pubdate = 'February 6, 2020';
+$featured_img = '';
+$anonymous = false;
+$article = '<p>Samantha Ripple was tattooed with a single word—“JUSTICE”—as she marched with about 500 people through the streets of Seattle Saturday in the latest Women’s March to demand reproductive rights and access to safe, legal abortions.</p>
 
     <p>“I came out because of the precarity of our democracy,” said Ripple, 22.</p>
     
@@ -28,9 +27,8 @@ $article = array(
     
     <p>Brown said she has marched in a half dozen rallies for abortion rights since Roe was overturned. She became pregnant at age 15. “I agonized about whether to have an abortion,” said Brown, who ultimately put her baby up for adoption. “I’m marching because I can’t imagine not having a choice at that time.”</p>
     
-    <p>“Everybody has the right to their own body,” Brown said. “It’s not up to anyone else.”</p>',
-    'comments' => array(),
-);
+    <p>“Everybody has the right to their own body,” Brown said. “It’s not up to anyone else.”</p>';
+    $comments = array();
 ?>
 
 

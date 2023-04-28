@@ -17,4 +17,4 @@
 
 <?php } ?>
 
-<p>The News Beat publishes five different types of articles: <a href="../article-types/?referrer=<?php echo urlencode(get_current_url());?>">news, analysis, opinion, and advertiser content</a>.</p>
+<p>The Gazette Star publishes five different types of articles: <a href="../article-types/?referrer=<?php echo urlencode(get_current_url());?>">news, analysis, opinion, and advertiser content</a>.</p>

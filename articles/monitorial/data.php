@@ -2,14 +2,12 @@
 
 // Everything ends up in one $article array to make it easier to dump everything and see what we're working with. Makes it easier to transition
 // to a class or database in the future as well since things are more organized.
-
-$article = array(
-    'author' => getAuthor(),
-    'pubdate' => PUBDATE,
-    'title' => 'Demonstrators arrested at Women\'s March',
-    'featuredImage' => '',
-    'content' => '
-    <p>Demonstrators were arrested during a march that drew about 500 people through the streets of Seattle Saturday to protest for abortion rights.</p>
+$title = 'Demonstrators arrested at Women\'s March';
+$author = 'Andrew Smith';
+$pubdate = 'February 6, 2020';
+$featured_img = '';
+$anonymous = false;
+$article = '<p>Demonstrators were arrested during a march that drew about 500 people through the streets of Seattle Saturday to protest for abortion rights.</p>
     
     <p>Seattle police said the protesters were part of a crowd during what authorities have called a “night of rage.”</p>
     
@@ -27,9 +25,8 @@ $article = array(
     
     <p>U.S. Sen. Michelle Johnson participated in the protest and claimed the march was largely peaceful until police became confrontational with protesters.</p>
     
-    <p>“We have to make our voices heard,” Johnson said to the crowd. “The Supreme Court is a bunch of men trying to control our bodies.”</p>',
-    'comments' => array(),
-);
+    <p>“We have to make our voices heard,” Johnson said to the crowd. “The Supreme Court is a bunch of men trying to control our bodies.”</p>';
+    $comments = array();
 ?>
 
 

@@ -8,12 +8,12 @@ include('../includes/header.php');
 <main id="content" class="container news-beat-article-types" role="main">
     <article class="article">
         <header class="article__header">
-            <h1 class="article__title">The News Beat Article Types</h1>
+            <h1 class="article__title">The Gazette Star Article Types</h1>
         </header>
 
         <nav class="long-page-nav"><a href="<?php echo get_referral_url();?>">Go Back to the Article</a></nav>
 
-        <p>The News Beat publishes five different types of articles: news, analysis, opinion, reviews and advertiser content.</p>
+        <p>The Gazette Star publishes five different types of articles: news, analysis, opinion, reviews and advertiser content.</p>
 
         <h4>News</h4>
         <p>A news report is based on facts, either observed and verified by the author or verified from knowledgeable sources. This includes perspectives from multiple viewpoints on a particular issue, unlike public relations or propaganda. News reports do not incorporate the opinion of the author. </p>

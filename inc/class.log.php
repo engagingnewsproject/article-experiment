@@ -20,7 +20,7 @@ class Log
 				$this->user_id = $user_id;
 				$this->url = $url;
 				$this->identifier = $identifier;
-				$this->ipAddress = getIPAddress();
+				$this->ipAddress = get_the_ip();
 				$this->currTime = date("m/d/Y g:i:s A",time()-18000);
 				$this->action = str_replace("|", "&#124;", filter_var($action, FILTER_SANITIZE_STRING));
 				$this->comment = str_replace("|", "&#124;", filter_var($comment, FILTER_SANITIZE_STRING));
