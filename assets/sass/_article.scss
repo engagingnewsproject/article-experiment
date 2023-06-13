@@ -1,5 +1,4 @@
 article {
-
     @include media($tablet) {
         margin: 0 $spacing__base;
     }
@@ -9,6 +8,32 @@ article {
     margin-bottom: 1rem;
 }
 
+
+.article-explanation {
+  width: 100%;
+  float: none;
+  padding: 0;
+  @include media($tablet) {
+    width: 30%;
+    padding-left: 2rem;
+    float: right;  
+  }
+  
+}
+.article-wrapped {
+
+  display: block;
+  @include media($tablet) {
+    display:flex;
+  }
+}
+
+.article-text {
+  width: 100%;
+  @include media($tablet) {
+    width: 70%;
+   }
+}
 .article__extra-header-info {
     position: relative;
 
@@ -136,11 +161,23 @@ article {
 }
 
 .behind-the-story {
-    margin: calc($spacing__base * 2) 0;
+  
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #cfebfd;
+    border-bottom:2px solid #a9a9a9;
+    border-right: 2px solid #a9a9a9;
+    color: #242526;
 
+    .behind-the-story__why {
+      font-weight: bold;
+    }
     .behind-the-story__title {
         font-size: 1.4rem;
-        border-bottom: 1px solid #bbb;
+        font-weight: bold;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #1F3B4D;
+        padding-right: 0;
         margin-bottom: $spacing__base;
     }
 

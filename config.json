@@ -19,12 +19,12 @@
                 {
                     "id": "solidarity",
                     "key": "solidarity",
-                    "value": "<p>Our coverage of protests since Roe v. Wade was overturned prioritizes sources participating in the larger movement. We take this approach to represent the direct experiences of those affected by the decision.</p>"
+                    "value": "<p>Our coverage of protests since Roe v. Wade was overturned prioritizes sources directly affected by the decision. We take this approach to represent the direct experiences of those affected by the decision.</p>"
                 },
                 {
                     "id": "monitorial",
                     "key": "monitorial",
-                    "value": "<p>Our coverage of protests since Roe vs. Wade was overturned prioritizes sources with official positions who are in charge of enforcing city ordinances. We take this approach to represent officials' responses to protests.</p>"
+                    "value": "<p>Our coverage of protests since Roe v. Wade was overturned prioritizes sources with official positions who are in charge of enforcing city ordinances. We take this approach to represent officials' responses to protests.</p>"
                 },
                 {
                   "id": "inflation",

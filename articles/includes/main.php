@@ -8,31 +8,39 @@
     <article class="article">
         <header class="article__header">
             <h2 class="article__title"><?php echo $article['title'];?></h2>
-            <p class="byline">Posted on <time pubdate="pubdate"><?php echo $article['pubdate'];?></time></p>
             <div class="article__extra-header-info">
                 <div class="author">
-                    <?php if(!empty($author['image']['src'])) { ?>
-                    <img class="author__image" src="<?php echo $author['image']['src'];?>" alt="<?php echo $author['image']['alt'];?>" />
-                    <?php } ?>
-                    <p class="author__name">By <?php echo $author['name'];?></p>
-                    <p class="author__job"><?php echo SITE_NAME;?> Staff Reporter</p>
-                    <?php if(!empty($author['bio'])) {include('author-bio.php');}?>
+                    <p class="author__name">Staff Reports</p>
+                    <p class="author__job">The Gazette-Star</p>
                 </div>
 
             </div>
         </header>
 
-        <?php 
-        echo $article['content'];
-        
-        if( EXPLAIN_BOX ): // EXPLAIN_BOX constant is a variation set in `config.json`
-            include('behind-the-story.php');
-        endif;
+    
+    <?php if (EXPLAIN_BOX): ?>
+      <div class="article-wrapped">
 
-        if ($article['comments_display']) {
-            include('comments.php');
-        }
-        ?>
+        <div class="article-text">
+            <?php echo $article['content']; ?>
+        </div>
+        
+        <div class="article-explanation"> 
+          <?php 
+            // EXPLAIN_BOX constant is a variation set in `config.json`
+            include('behind-the-story.php');
+          ?>
+        </div>
+      </div>
+
+    <?php else: ?>
+
+      <?php echo $article['content']; ?>
+
+    <?php endif; ?>
+
+        
 
     </article>
+
 </main>

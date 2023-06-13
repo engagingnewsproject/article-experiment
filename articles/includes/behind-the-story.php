@@ -2,7 +2,7 @@
     <h2 class="behind-the-story__title">Behind the Story</h2>
     
     <?php if( EXPLAIN_BOX ) : // EXPLAIN_BOX constant is a variation set in `config.json`, included in `articles/includes/main.php` ?>
-        <h3>Why we wrote it</h3>
+        <h3 class="behind-the-story__why">Why we wrote it</h3>
         <?php echo EXPLAIN_BOX;?>
     <?php endif; ?>
     
@@ -35,6 +35,6 @@
         <p><?php echo $article['version_history'];?></p>
     <?php endif; ?>
     
-    <p>This story was researched, written, and published in accordance with The Gazette Star'sbest practices.</p>
+    <p>This story was researched, written, and published in accordance with The Gazette Star's best practices.</p>
 
 </section>

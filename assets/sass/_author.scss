@@ -25,12 +25,14 @@
     margin: 0;
     position: relative;
     padding-top: 0.4rem;
+    font-style: italic;
 }
 
 .author__job {
-    font-size: 0.725rem;
-    color: $font--light;
-    margin-bottom: 0;
+    font-size: 0.8rem;
+    margin: 0;
+    position: relative;
+    font-style: italic;
 }
 
 .author__button {
