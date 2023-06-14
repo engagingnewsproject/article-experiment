@@ -70,3 +70,13 @@ TODO: fix everything below (move to WP Engine & NOT GoDaddy)
 ```
 
 _All you need to change in the code above is the `username` and `password` values._
+
+## Live files
+
+What files & folders should be pushed to the live hosting account.Only these folders & files need to be updated on the hosting `public_html/NewsBeat/` folder.
+
+`articles/`
+
+`assets/`
+
+`dist/inc/logs/full-width-qualtrics-iframe.cssindex.phparticle-list.htmlpackage.json404.htmliframe-test.phpconfig.jsongulpfile.jsREADME.mdownconfig.phppackage-lock.json`
