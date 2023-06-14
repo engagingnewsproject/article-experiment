@@ -4,6 +4,10 @@ description: The Gazette Star article experiment. http://thegazettestar.com/
 
 # README
 
+## Links
+
+[Comments on survey and stimuli Google Doc](https://docs.google.com/document/d/1j8SlXP\_sLz9LwzK7Z4BkSnFqQ3n1DscvOzE-bsCNVpA/edit)
+
 ### Article Experiment <a href="#article-experiment" id="article-experiment"></a>
 
 This is a base template for displaying single news articles for use in various ENP research experiments. You can see an example of the page at [https://thenewsbeat.org/trust-indicators/articles/us-demographic-shift-will-have-huge-political-impact/](https://thenewsbeat.org/trust-indicators/articles/us-demographic-shift-will-have-huge-political-impact/)
