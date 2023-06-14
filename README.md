@@ -4,11 +4,11 @@ description: The Gazette Star article experiment. http://thegazettestar.com/
 
 # README
 
-#### Article Experiment <a href="#article-experiment" id="article-experiment"></a>
+### Article Experiment <a href="#article-experiment" id="article-experiment"></a>
 
 This is a base template for displaying single news articles for use in various ENP research experiments. You can see an example of the page at [https://thenewsbeat.org/trust-indicators/articles/us-demographic-shift-will-have-huge-political-impact/](https://thenewsbeat.org/trust-indicators/articles/us-demographic-shift-will-have-huge-political-impact/)
 
-#### Structure <a href="#structure" id="structure"></a>
+### Structure <a href="#structure" id="structure"></a>
 
 `config.json` is where most of the work will happen. A few constants get set there that are the basis for the study. What variation of the study you get is based on query parameters in the URL, like `/?author_photo=personal&author_bio=basic`. Then constants get set based on those parameters. Use the root / as the control for the study.
 
@@ -18,23 +18,23 @@ The templating structure is manual, but simple. To create a new article, copy an
 
 Then, replace the content in `/articles/my-new-article/data.php`. The variables set in data.php will get passed to the template files. `data.php` basically serves as a way to avoid setting up an actual database for each new experiment since the project is small. If you were to use this system to build an actual CMS, you'd want to use a database.
 
-#### Commenting <a href="#commenting" id="commenting"></a>
+### Commenting <a href="#commenting" id="commenting"></a>
 
 Comments just log to a file via Javascript, not a database. They're only submitted via AJAX through `/assets/js/post-with-comments.js`.
 
-#### Tracking <a href="#tracking" id="tracking"></a>
+### Tracking <a href="#tracking" id="tracking"></a>
 
 All clicks on buttons or links are tracked via Google Analytics and pass the button or link identifier, as well as which article the click came from.
 
-#### Local Set-up <a href="#local-set-up" id="local-set-up"></a>
+### Local Set-up <a href="#local-set-up" id="local-set-up"></a>
 
 We're using Gulp to compile. Run `npm install` from your project directory to install the node modules from `package.json`. Install (Laravel Valet)\[[https://laravel.com/docs/10.x/valet#installation](https://laravel.com/docs/10.x/valet#installation)] on your local machine and run `valet park` & `valet link` from your project directory. Lastly, run `gulp` on the command line from the project directory to serve the project up via localhost with BrowserSync.
 
-#### When Finished <a href="#when-finished" id="when-finished"></a>
+### When Finished <a href="#when-finished" id="when-finished"></a>
 
 Make sure to update the article-list.html file with links to all of your articles
 
-#### Hosting <a href="#hosting" id="hosting"></a>
+### Hosting <a href="#hosting" id="hosting"></a>
 
 Experiments are found at [http://thegazettestar.com/](http://thegazettestar.com/). On the stroudresearch.net GoDaddy account the site folder directory is at `/public_html/NewsBeat/`. If you need to change the forwarding address go to GoDaddy/Domains/thegazettestar.com/DNS/Fowarding and update the Destination.
 
@@ -75,8 +75,21 @@ _All you need to change in the code above is the `username` and `password` value
 
 What files & folders should be pushed to the live hosting account.Only these folders & files need to be updated on the hosting `public_html/NewsBeat/` folder.
 
-`articles/`
-
-`assets/`
-
-`dist/inc/logs/full-width-qualtrics-iframe.cssindex.phparticle-list.htmlpackage.json404.htmliframe-test.phpconfig.jsongulpfile.jsREADME.mdownconfig.phppackage-lock.json`
+| Files                             |
+| --------------------------------- |
+| `articles/`                       |
+| `assets/`                         |
+| `dist/`                           |
+| `inc/`                            |
+| `logs/`                           |
+| `full-width-qualtrics-iframe.css` |
+| `index.php`                       |
+| `article-list.html`               |
+| `package.json`                    |
+| `404.html`                        |
+| `iframe-test.php`                 |
+| `config.json`                     |
+| `gulpfile.js`                     |
+| `README.mdown`                    |
+| `config.php`                      |
+| `package-lock.json`               |
