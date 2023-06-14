@@ -14,24 +14,23 @@ article {
   float: none;
   padding: 0;
   @include media($tablet) {
-    width: 30%;
-    padding-left: 2rem;
+    width: 35%;
     float: right;  
   }
   
 }
 .article-wrapped {
-
   display: block;
   @include media($tablet) {
     display:flex;
+    gap: 2em;
   }
 }
 
 .article-text {
   width: 100%;
   @include media($tablet) {
-    width: 70%;
+    width: 65%;
    }
 }
 .article__extra-header-info {
@@ -169,6 +168,10 @@ article {
     border-right: 2px solid #a9a9a9;
     color: #242526;
 
+    @include media($tablet) {
+        padding-top: 2rem;
+    }
+    
     .behind-the-story__why {
       font-weight: bold;
     }
