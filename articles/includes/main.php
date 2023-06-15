@@ -11,7 +11,7 @@
             <div class="article__extra-header-info">
                 <div class="author">
                     <p class="author__name">Staff Reports</p>
-                    <p class="author__job">The Gazette-Star</p>
+                    <p class="author__job">The Gazette Star</p>
                 </div>
 
             </div>
