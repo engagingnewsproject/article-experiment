@@ -127,3 +127,15 @@ VS Code SFTP exstension allows SFTP direct connection. `sftp.json` example:
 `[sftp username]` - replace with \[sftp username] on Stache
 
 `[sftp password]` - replace with \[sftp password] on Stache
+
+# Caching
+
+To prevent caching of HTML documents, add the following line to your .htaccess file:
+
+```arduino
+Header set Cache-Control "no-cache, no-store, must-revalidate"
+```
+
+This sets the Cache-Control header to include the directives no-cache, no-store, and must-revalidate, which instruct browsers and intermediate caches not to cache the HTML documents.
+
+
