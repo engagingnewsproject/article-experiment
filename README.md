@@ -97,3 +97,7 @@ What files & folders should be pushed to the live hosting account.Only these fol
 | `README.mdown`                    |
 | `config.php`                      |
 | `package-lock.json`               |
+
+## Connection to server
+
+Authenticated users can connect via SSH & SFTP with private instructions listed on [utexas.edu CME Stache page](https://stache.utexas.edu/entry/fa08b2fb7a018a2093081df086bae0a0).
