@@ -13,9 +13,9 @@
     <?php $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?>
     <meta property="og:site_name" content="The Gazette Star"/>
     <meta property="og:title" content="<? echo $article['title'];?>"/>
-    <meta property="og:image" content="<? echo dirname(dirname($current_url)) .'/articles/'. $featured_img;?>"/>
+    <?php if(!empty($featured_img)) : ?><meta property="og:imag`e" content="<? echo dirname(dirname($current_url)) .'/articles/'. $featured_img;?>"/><?php endif; ?>
     <meta property="og:url" content="<? echo $current_url;?>"/>
-    <meta property="og:description" content="<? echo strip_tags(substr($article,0,240))?>&hellip;" />
+    <meta property="og:description" content="<?php echo strip_tags(substr($article['content'],0,240))?>&hellip;" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 
 
@@ -30,7 +30,7 @@
     <![endif]-->
 
     <script>
-        var studyType = 'Article - ' + '<? echo $article_identifier;?>' + '|Headline - ' + '<? echo $headline_identifier;?>';
+        var studyType = 'Article - ' + '<?php if(!empty($article_identifier)) : echo $article_identifier; endif;?>' + '|Headline - ' + '<?php if(!empty($headline_identifier)) : echo $headline_identifier; endif;?>';
     </script>
 
 </head>
