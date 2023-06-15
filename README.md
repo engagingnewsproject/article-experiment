@@ -106,14 +106,16 @@ Authenticated users can connect via SSH & SFTP with private instructions listed 
 
 VS Code SFTP exstension allows SFTP direct connection. `sftp.json` example:
 
-````
 ```json
 {
-    "name": "ftp.stroudresearch.net",
+    "name": "[your chosen name]",
     "host": "ftp.stroudresearch.net",
-    "username": "[sftp username]",
-    "password": "[sftp password]",
-    "remotePath": "/home/fedp0d7yxirk/public_html/NewsBeat/2023-article-experiment",
+    "protocol": "ftp",
+    "port": 21,
+    "username": "[FTP username]",
+    "password": "[FTP password]",
+    "remotePath": "/public_html/NewsBeat/2023-article-experiment",
+    "uploadOnSave": false, <--- you can set this to true
     "ignore": [
         ".vscode",
         ".git",
@@ -122,15 +124,16 @@ VS Code SFTP exstension allows SFTP direct connection. `sftp.json` example:
     ]
 }
 ```
-````
 
-`[sftp username]` - replace with \[sftp username] on Stache
+Project leader will create these for you on the hosting account:
 
-`[sftp password]` - replace with \[sftp password] on Stache
+`[FTP username]` - replace with \[FTP username] on Stache
+
+`[FTP password]` - replace with \[FTP password] on Stache
 
 # Caching
 
-To prevent caching of HTML documents, add the following line to your .htaccess file:
+To prevent caching of HTML documents, add the following line to your `.htaccess` file:
 
 ```arduino
 Header set Cache-Control "no-cache, no-store, must-revalidate"
