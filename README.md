@@ -2,8 +2,6 @@
 description: The Gazette Star article experiment. http://thegazettestar.com/
 ---
 
-# README
-
 ## Article Experiment <a href="#article-experiment" id="article-experiment"></a>
 
 This is a base template for displaying single news articles for use in various ENP research experiments. You can see an example of the page at [https://thenewsbeat.org/trust-indicators/articles/us-demographic-shift-will-have-huge-political-impact/](https://thenewsbeat.org/trust-indicators/articles/us-demographic-shift-will-have-huge-political-impact/)
