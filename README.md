@@ -101,3 +101,29 @@ What files & folders should be pushed to the live hosting account.Only these fol
 ## Connection to server
 
 Authenticated users can connect via SSH & SFTP with private instructions listed on [utexas.edu CME Stache page](https://stache.utexas.edu/entry/fa08b2fb7a018a2093081df086bae0a0).
+
+### SFTP Settings
+
+VS Code SFTP exstension allows SFTP direct connection. `sftp.json` example:
+
+````
+```json
+{
+    "name": "ftp.stroudresearch.net",
+    "host": "ftp.stroudresearch.net",
+    "username": "[sftp username]",
+    "password": "[sftp password]",
+    "remotePath": "/home/fedp0d7yxirk/public_html/NewsBeat/2023-article-experiment",
+    "ignore": [
+        ".vscode",
+        ".git",
+        ".DS_Store",
+        "/node_modules"
+    ]
+}
+```
+````
+
+`[sftp username]` - replace with \[sftp username] on Stache
+
+`[sftp password]` - replace with \[sftp password] on Stache
