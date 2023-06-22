@@ -5,7 +5,7 @@
 $article = array(
     'author' => getAuthor(),
     'pubdate' => PUBDATE,
-    'title' => "Women's March calls for reproductive rights",
+    'title' => "Women's March Downtown Calls for Reproductive Rights",
     'featuredImage' => '',
     'comments_display' => false,
     'anonymous' => false,           // Rendered on `articles/includes/main.php`

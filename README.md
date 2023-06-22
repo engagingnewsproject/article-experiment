@@ -109,3 +109,11 @@ This sets the Cache-Control header to include the directives no-cache, no-store,
 ## Links <a href="#links" id="links"></a>
 
 [Comments on survey and stimuli Google Doc](https://docs.google.com/document/d/1j8SlXP\_sLz9LwzK7Z4BkSnFqQ3n1DscvOzE-bsCNVpA/edit)
+
+## Qualtrics Survey Implementation
+
+Question embed code:
+```html
+<a id="gazette_iframeCover"></a>
+<iframe id="gazette_star" src='https://www.stroudresearch.net/NewsBeat/2023-article-experiment/articles/solidarity/?explain_box=none' style='height: 1715px; width: 750px; margin-left: auto; margin-right: auto;border:0;'></iframe>
+```
