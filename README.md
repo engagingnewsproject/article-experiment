@@ -112,8 +112,48 @@ This sets the Cache-Control header to include the directives no-cache, no-store,
 
 ## Qualtrics Survey Implementation
 
-Question embed code:
+Question embed example code:
 ```html
 <a id="gazette_iframeCover"></a>
 <iframe id="gazette_star" src='https://www.stroudresearch.net/NewsBeat/2023-article-experiment/articles/solidarity/?explain_box=none' style='height: 1715px; width: 750px; margin-left: auto; margin-right: auto;border:0;'></iframe>
+```
+
+`<a id="gazette_iframeCover"></a>` - prevents user from clicking
+
+Qualtrics JS code:
+
+```javascript
+Qualtrics.SurveyEngine.addOnload(function()
+{
+	/*Place your JavaScript here to run when the page loads*/
+	var elem = document.getElementById('gazette_iframeCover');
+	console.log(elem);
+	var inputBox = document.getElementById('QR~QID93');
+	console.log(inputBox);
+
+	function replaceText() {
+		elem.style.display = "none";
+		var textContent = "Clicked Decision Tree";
+		inputBox.value = textContent;
+	}
+	elem.addEventListener("click", replaceText, false);
+	
+});
+
+Qualtrics.SurveyEngine.addOnReady(function()
+{
+	/*Place your JavaScript here to run when the page is fully displayed*/
+
+
+	  // document.getElementById('QR~QID93').value="this";
+
+
+
+});
+
+Qualtrics.SurveyEngine.addOnUnload(function()
+{
+	/*Place your JavaScript here to run when the page is unloaded*/
+
+});
 ```
