@@ -37,9 +37,15 @@ const paths = {
 // BROWSER SYNC WITH PHP INSIDE SERVER
 function sync() {
 	browserSync.init({
-		proxy: sitename + ".test",
+		proxy: {
+			target: "http://article-experiment.test",
+			ws: true
+		},
 		open: "local",
 		logLevel: "debug",
+		notify: false,
+		ghostMode: false,
+		https: false
 	})
 }
 
