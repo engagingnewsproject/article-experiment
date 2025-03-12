@@ -24,13 +24,53 @@ Comments just log to a file via Javascript, not a database. They're only submitt
 
 All clicks on buttons or links are tracked via Google Analytics and pass the button or link identifier, as well as which article the click came from.
 
-## Local Set-up <a href="#local-set-up" id="local-set-up"></a>
+## Local Setup
 
-We're using Gulp to compile. Run `npm install` from your project directory to install the node modules from `package.json`. Install (Laravel Valet)\[[https://laravel.com/docs/10.x/valet#installation](https://laravel.com/docs/10.x/valet#installation)] on your local machine and run `valet park` & `valet link` from your project directory. Lastly, run `gulp` on the command line from the project directory to serve the project up via localhost with BrowserSync.
+### Prerequisites
+- macOS
+- [Homebrew](https://brew.sh)
+- PHP 8.0 or higher
+- Composer
 
-### When Finished
+### Installation Steps
 
-Make sure to update the article-list.html file with links to all of your articles
+1. **Update Homebrew & Install PHP**
+   ```bash
+   brew update
+   brew install php
+   ```
+
+2. **Install Composer & Valet**
+   ```bash
+   # Install Composer if not already installed
+   brew install composer
+   
+   # Install Valet globally
+   composer global require laravel/valet
+   
+   # Add Composer bin to PATH (if not already done)
+   echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.zshrc
+   source ~/.zshrc
+   
+   # Install and configure Valet
+   valet install
+   ```
+
+3. **Configure Project Directory**
+   - From the `article-experiment/` directory, run:
+     ```bash
+     valet park
+     valet link
+     ```
+
+4. **Start Development Server**
+   ```bash
+   gulp
+   ```
+   This will serve the project via localhost with BrowserSync enabled.
+
+### Post-Setup
+Remember to update the `article-list.html` file with links to all your articles once you're finished.
 
 ## FTP Connection <a href="#ftp-connection" id="ftp-connection"></a>
 
